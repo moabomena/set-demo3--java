@@ -10,30 +10,38 @@ public class Program {
 
 		Scanner sc = new Scanner(System.in);
 
-		Set<Integer> st = new HashSet<>();
+		Set<Integer> a = new HashSet<>();
+		Set<Integer> b = new HashSet<>();
+		Set<Integer> c = new HashSet<>();
 
 		System.out.print("How many students for course A? ");
-		int a = sc.nextInt();
+		int n = sc.nextInt();
 
-		for (int i = 0; i < a; i++) {
-			st.add(sc.nextInt());
+		for (int i = 0; i < n; i++) {
+			int number = sc.nextInt();
+			a.add(number);
 		}
 
 		System.out.print("How many students for course B? ");
-		int b = sc.nextInt();
+		n = sc.nextInt();
 
-		for (int i = 0; i < b; i++) {
-			st.add(sc.nextInt());
+		for (int i = 0; i < n; i++) {
+			int number = sc.nextInt();
+			b.add(number);
 		}
 
 		System.out.print("How many students for course C? ");
-		int c = sc.nextInt();
+		n = sc.nextInt();
 
-		for (int i = 0; i < c; i++) {
-			st.add(sc.nextInt());
+		for (int i = 0; i < n; i++) {
+			int number = sc.nextInt();
+			c.add(number);
 		}
 		
-		System.out.println("Total students: " + st.size());
+		Set<Integer> total = new HashSet<>(a);
+		total.addAll(b);
+		total.addAll(c);
+		System.out.println("Total students: " + total.size());
 
 		sc.close();
 
